@@ -120,145 +120,41 @@ fn should_include_word(word: &str, vocab: &HashMap<&str, &str>) -> bool {
 fn normalize_word(word: &str) -> Vec<String> {
     let mut candidates = vec![word.to_string()];
     
-    // Handle plurals
-    if word.ends_with("s") && word.len() > 1 {
-        let singular = &word[..word.len()-1];
-        candidates.push(singular.to_string());
-        
-        // Handle -es plurals (boxes -> box, dishes -> dish)
-        if word.ends_with("es") && word.len() > 2 {
-            let without_es = &word[..word.len()-2];
-            candidates.push(without_es.to_string());
+    // Simple plural reduction - just strip common plural endings
+    if word.len() > 2 {
+        // Remove -s endings (most common plurals)
+        if word.ends_with("s") && !word.ends_with("ss") {
+            candidates.push(word[..word.len()-1].to_string());
         }
         
-        // Handle -ies plurals (cities -> city, flies -> fly)
-        if word.ends_with("ies") && word.len() > 3 {
-            let stem = &word[..word.len()-3];
-            candidates.push(format!("{}y", stem));
+        // Remove -es endings
+        if word.ends_with("es") {
+            candidates.push(word[..word.len()-2].to_string());
         }
         
-        // Handle -ves plurals (leaves -> leaf, knives -> knife)
-        if word.ends_with("ves") && word.len() > 3 {
-            let stem = &word[..word.len()-3];
-            candidates.push(format!("{}f", stem));
-            candidates.push(format!("{}fe", stem));
-        }
-    }
-    
-    // Handle -ing verbs (running -> run, walking -> walk)
-    if word.ends_with("ing") && word.len() > 3 {
-        let stem = &word[..word.len()-3];
-        candidates.push(stem.to_string());
-        
-        // Handle doubling consonants (running -> run, swimming -> swim)
-        if stem.len() >= 2 {
-            let last_char = stem.chars().last().unwrap();
-            let second_last_char = stem.chars().nth(stem.len()-2).unwrap();
-            if last_char == second_last_char && "bcdfghjklmnpqrstvwxz".contains(last_char) {
-                let undoubled = &stem[..stem.len()-1];
-                candidates.push(undoubled.to_string());
-            }
+        // Remove -ies endings (but keep the 'i' as it might be part of the root)
+        if word.ends_with("ies") {
+            candidates.push(word[..word.len()-3].to_string());
+            candidates.push(format!("{}y", &word[..word.len()-3]));
         }
         
-        // Handle -e dropping (dancing -> dance, writing -> write)
-        if !stem.is_empty() {
-            candidates.push(format!("{}e", stem));
+        // Remove -ves endings
+        if word.ends_with("ves") {
+            candidates.push(word[..word.len()-3].to_string());
         }
     }
     
-    // Handle past tense -ed verbs (walked -> walk, jumped -> jump)
-    if word.ends_with("ed") && word.len() > 2 {
-        let stem = &word[..word.len()-2];
-        candidates.push(stem.to_string());
-        
-        // Handle doubling consonants (stopped -> stop, planned -> plan)
-        if stem.len() >= 2 {
-            let last_char = stem.chars().last().unwrap();
-            let second_last_char = stem.chars().nth(stem.len()-2).unwrap();
-            if last_char == second_last_char && "bcdfghjklmnpqrstvwxz".contains(last_char) {
-                let undoubled = &stem[..stem.len()-1];
-                candidates.push(undoubled.to_string());
-            }
+    // Simple verb form reduction - strip common endings
+    if word.len() > 3 {
+        // Remove -ing endings
+        if word.ends_with("ing") {
+            candidates.push(word[..word.len()-3].to_string());
         }
         
-        // Handle -ied past tense (tried -> try, carried -> carry)
-        if word.ends_with("ied") && word.len() > 3 {
-            let stem = &word[..word.len()-3];
-            candidates.push(format!("{}y", stem));
+        // Remove -ed endings
+        if word.ends_with("ed") {
+            candidates.push(word[..word.len()-2].to_string());
         }
-        
-        // Handle -e dropping (danced -> dance, raced -> race)
-        if !stem.is_empty() {
-            candidates.push(format!("{}e", stem));
-        }
-    }
-    
-    // Handle third person singular -s (runs -> run, goes -> go)
-    if word.ends_with("s") && word.len() > 1 && !word.ends_with("ss") {
-        let without_s = &word[..word.len()-1];
-        candidates.push(without_s.to_string());
-        
-        // Handle -es third person (teaches -> teach, watches -> watch)
-        if word.ends_with("es") && word.len() > 2 {
-            let without_es = &word[..word.len()-2];
-            candidates.push(without_es.to_string());
-        }
-    }
-    
-    // Handle irregular plurals by adding common ones
-    match word {
-        "children" => candidates.push("child".to_string()),
-        "mice" => candidates.push("mouse".to_string()),
-        "feet" => candidates.push("foot".to_string()),
-        "teeth" => candidates.push("tooth".to_string()),
-        "geese" => candidates.push("goose".to_string()),
-        "men" => candidates.push("man".to_string()),
-        "women" => candidates.push("woman".to_string()),
-        "people" => candidates.push("person".to_string()),
-        "sheep" => candidates.push("sheep".to_string()), // same form
-        "deer" => candidates.push("deer".to_string()), // same form
-        _ => {}
-    }
-    
-    // Handle verb conjugations
-    match word {
-        "goes" => candidates.push("go".to_string()),
-        "does" => candidates.push("do".to_string()),
-        "has" => candidates.push("have".to_string()),
-        "is" => candidates.push("be".to_string()),
-        "are" => candidates.push("be".to_string()),
-        "was" => candidates.push("be".to_string()),
-        "were" => candidates.push("be".to_string()),
-        "came" => candidates.push("come".to_string()),
-        "went" => candidates.push("go".to_string()),
-        "ran" => candidates.push("run".to_string()),
-        "ate" => candidates.push("eat".to_string()),
-        "drank" => candidates.push("drink".to_string()),
-        "sang" => candidates.push("sing".to_string()),
-        "swam" => candidates.push("swim".to_string()),
-        "flew" => candidates.push("fly".to_string()),
-        "drove" => candidates.push("drive".to_string()),
-        "wrote" => candidates.push("write".to_string()),
-        "read" => candidates.push("read".to_string()), // same form but different pronunciation
-        "said" => candidates.push("say".to_string()),
-        "saw" => candidates.push("see".to_string()),
-        "heard" => candidates.push("hear".to_string()),
-        "thought" => candidates.push("think".to_string()),
-        "brought" => candidates.push("bring".to_string()),
-        "bought" => candidates.push("buy".to_string()),
-        "caught" => candidates.push("catch".to_string()),
-        "taught" => candidates.push("teach".to_string()),
-        "fought" => candidates.push("fight".to_string()),
-        "found" => candidates.push("find".to_string()),
-        "held" => candidates.push("hold".to_string()),
-        "told" => candidates.push("tell".to_string()),
-        "sold" => candidates.push("sell".to_string()),
-        "felt" => candidates.push("feel".to_string()),
-        "left" => candidates.push("leave".to_string()),
-        "kept" => candidates.push("keep".to_string()),
-        "slept" => candidates.push("sleep".to_string()),
-        "wept" => candidates.push("weep".to_string()),
-        _ => {}
     }
     
     candidates

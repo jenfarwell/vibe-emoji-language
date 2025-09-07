@@ -22,29 +22,29 @@ pub fn get_vocabulary() -> HashMap<&'static str, &'static str> {
     vocab.insert("horse", "🐎");
     vocab.insert("yes", "✅");
     vocab.insert("no", "❌");
-    vocab.insert("maybe", "🤔");
-    vocab.insert("now", "⏰📍"); // time at this point
-    vocab.insert("later", "⏰➡️"); // time moving forward
-    vocab.insert("soon", "⏰🔜"); // time approaching quickly
-    vocab.insert("today", "📅📍"); // this day specifically
-    vocab.insert("tomorrow", "📅➡️"); // next day
-    vocab.insert("yesterday", "📅⬅️"); // previous day
-    vocab.insert("here", "📍👤"); // at speaker's location
-    vocab.insert("there", "📍➡️"); // at distant location
-    vocab.insert("everywhere", "📍🌍"); // all locations
-    vocab.insert("nowhere", "🚫📍"); // no location
-    vocab.insert("somewhere", "📍❓"); // unknown location
-    vocab.insert("this", "👤📍🔸"); // near to speaker
-    vocab.insert("that", "➡️📍🔸"); // distant from speaker
-    vocab.insert("these", "👤📍🔸🔸"); // multiple near speaker
-    vocab.insert("those", "➡️📍🔸🔸"); // multiple distant from speaker
-    vocab.insert("who", "👤❓"); // person question
-    vocab.insert("what", "🔸❓"); // thing question
-    vocab.insert("where", "📍❓"); // location question
-    vocab.insert("when", "⏰❓"); // time question
-    vocab.insert("why", "💭❓"); // reason question
-    vocab.insert("how", "🔧❓"); // method question
-    vocab.insert("which", "🫵❓"); // selection question
+    vocab.insert("dog", "🐶");
+    vocab.insert("cat", "�");
+    vocab.insert("mouse", "🐭");
+    vocab.insert("rat", "�");
+    vocab.insert("lion", "🦁");
+    vocab.insert("tiger", "�");
+    vocab.insert("bear", "�");
+    vocab.insert("fox", "🦊");
+    vocab.insert("rabbit", "�");
+    vocab.insert("whale", "�");
+    vocab.insert("dolphin", "�");
+    vocab.insert("pig", "�");
+    vocab.insert("sheep", "�");
+    vocab.insert("apple", "🍎");
+    vocab.insert("banana", "🍌");
+    vocab.insert("orange", "🍊");
+    vocab.insert("grape", "🍇");
+    vocab.insert("watermelon", "🍉");
+    vocab.insert("pizza", "🍕");
+    vocab.insert("burger", "🍔");
+    vocab.insert("sushi", "🍣");
+    vocab.insert("cake", "🍰");
+    vocab.insert("bread", "🍞");
     vocab.insert("whose", "👤🔗❓"); // possession question
     vocab.insert("whom", "👤➡️❓"); // object person question
     
@@ -141,10 +141,10 @@ pub fn get_vocabulary() -> HashMap<&'static str, &'static str> {
     vocab.insert("am", "👤="); // identity/state of being
     vocab.insert("is", "="); // identity/state of being  
     vocab.insert("are", "👥="); // plural identity/state
-    vocab.insert("eat", "�➡️👄"); // person to mouth action
-    vocab.insert("eats", "�➡️👄");
-    vocab.insert("see", "�️➡️"); // eye directed outward
-    vocab.insert("sees", "�️➡️");
+    vocab.insert("eat", "😋"); // person to mouth action
+    vocab.insert("eats", "😋");
+    vocab.insert("see", "👁️"); // eye directed outward
+    vocab.insert("sees", "👁️");
     vocab.insert("love", "👤❤️➡️"); // person sending love
     vocab.insert("loves", "👤❤️➡️");
     vocab.insert("run", "👤🏃➡️"); // person running direction
@@ -152,17 +152,17 @@ pub fn get_vocabulary() -> HashMap<&'static str, &'static str> {
     vocab.insert("go", "👤➡️"); // person moving direction
     vocab.insert("goes", "👤➡️");
     vocab.insert("come", "👤⬅️"); // person moving toward speaker
-    vocab.insert("comes", "�⬅️");
+    vocab.insert("comes", "👤⬅️");
     vocab.insert("give", "👤➡️🎁👤"); // person giving to person
-    vocab.insert("gives", "👤➡️🎁�");
+    vocab.insert("gives", "👤➡️🎁👤");
     vocab.insert("take", "👤⬅️✋"); // person taking toward self
     vocab.insert("takes", "👤⬅️✋");
     vocab.insert("get", "👤⬅️🫴"); // person acquiring toward self
-    vocab.insert("gets", "�⬅️🫴");
+    vocab.insert("gets", "👤⬅️🫴");
     vocab.insert("bring", "👤🫴➡️"); // person carrying toward
     vocab.insert("brings", "👤🫴➡️");
     vocab.insert("send", "👤📤➡️"); // person dispatching outward
-    vocab.insert("sends", "�📤➡️");
+    vocab.insert("sends", "👤📤➡️");
     vocab.insert("receive", "👤📥⬅️"); // person getting inward
     vocab.insert("receives", "👤📥⬅️");
     vocab.insert("tell", "👤🗣️➡️👤"); // person speaking to person
@@ -180,7 +180,7 @@ pub fn get_vocabulary() -> HashMap<&'static str, &'static str> {
     vocab.insert("hurt", "👤💥➡️👤"); // person harming to person
     vocab.insert("hurts", "👤💥➡️👤");
     vocab.insert("heal", "👤🩹➡️👤"); // person healing to person
-    vocab.insert("heals", "👤�➡️👤");
+    vocab.insert("heals", "👤🩹➡️👤");
     // More verbs: actions
     vocab.insert("jump", "⬆️");
     vocab.insert("jumps", "⬆️");
@@ -287,13 +287,13 @@ pub fn get_vocabulary() -> HashMap<&'static str, &'static str> {
     vocab.insert("below", "⬇️📍"); // lower position
     vocab.insert("behind", "🔙📍"); // rear position
     vocab.insert("ahead", "⏩📍"); // front position
-    vocab.insert("against", "�➡️"); // opposition/contact
+    vocab.insert("against", "⚔️"); // opposition/contact
     vocab.insert("toward", "➡️🎯"); // direction of movement
     vocab.insert("away", "⬅️🏃"); // movement from
     vocab.insert("across", "➡️🌉"); // traversing
     vocab.insert("along", "➡️〰️"); // following a path
     vocab.insert("among", "📍👥"); // within a group
-    vocab.insert("between", "👤⏺️�"); // separating two things
+    vocab.insert("between", "👤⏺️👤"); // separating two things
     vocab.insert("beside", "👥📍"); // next to
     vocab.insert("beyond", "➡️🔭"); // past/further than
     vocab.insert("within", "📥⏰"); // inside bounds (space/time)
@@ -726,8 +726,8 @@ pub fn get_vocabulary() -> HashMap<&'static str, &'static str> {
     vocab.insert("yesterday", "📅");
     vocab.insert("here", "📍");
     vocab.insert("there", "👉");
-    vocab.insert("this", "�");
-    vocab.insert("that", "�");
+    vocab.insert("this", "🔸");
+    vocab.insert("that", "🔸");
     vocab.insert("who", "👤");
     vocab.insert("what", "❓");
     vocab.insert("where", "📍");
@@ -858,6 +858,356 @@ pub fn get_vocabulary() -> HashMap<&'static str, &'static str> {
     vocab.insert("see", "👁️");   // single eye is clearer than two eyes
     vocab.insert("wrong", "❌");  // X mark for wrong
     vocab.insert("right", "✅");  // check mark for correct
+
+    // --- MASSIVE EXPANSION ---
+    // Slang, idioms, internet/meme culture
+    vocab.insert("cool", "😎");
+    vocab.insert("awesome", "🤩");
+    vocab.insert("lit", "🔥");
+    vocab.insert("sus", "🕵️");
+    vocab.insert("bruh", "🫠");
+    vocab.insert("lol", "😂");
+    vocab.insert("lmao", "🤣");
+    vocab.insert("omg", "😱");
+    vocab.insert("yolo", "🧗");
+    vocab.insert("fomo", "😬");
+    vocab.insert("vibe", "🎶");
+    vocab.insert("mood", "😶‍🌫️");
+    vocab.insert("flex", "💪");
+    vocab.insert("fail", "💩");
+    vocab.insert("win", "🏆");
+    vocab.insert("rip", "🪦");
+    vocab.insert("goat", "🐐");
+    vocab.insert("cap", "🧢");
+    vocab.insert("noob", "🧑‍💻");
+    vocab.insert("pro", "🦸");
+    vocab.insert("gg", "🎮");
+    vocab.insert("ez", "👌");
+    vocab.insert("rekt", "💥");
+    vocab.insert("salty", "🧂");
+    vocab.insert("cringe", "😬");
+    vocab.insert("based", "🦾");
+    vocab.insert("ratio", "📊");
+    vocab.insert("stan", "🙌");
+    vocab.insert("slay", "💃");
+    vocab.insert("tea", "🫖");
+    vocab.insert("shade", "🌑");
+    vocab.insert("ghost", "👻");
+    vocab.insert("simp", "🫡");
+    vocab.insert("thirst", "🥤");
+    vocab.insert("ship", "🚢");
+    vocab.insert("savage", "🦁");
+    vocab.insert("clown", "🤡");
+    vocab.insert("bop", "🎵");
+    vocab.insert("hype", "📢");
+    vocab.insert("vibe check", "🔎🎶");
+    vocab.insert("big brain", "🧠🔝");
+    vocab.insert("small brain", "🧠🔽");
+    vocab.insert("suspect", "🕵️");
+    vocab.insert("sussy", "🕵️");
+    vocab.insert("yeet", "🏀");
+    vocab.insert("pog", "😲");
+    vocab.insert("pwn", "💥");
+    vocab.insert("troll", "🧌");
+    vocab.insert("wholesome", "🤗");
+    vocab.insert("toxic", "☢️");
+    vocab.insert("drip", "💧");
+    vocab.insert("fit", "🧥");
+    vocab.insert("vibe", "🎶");
+
+    // Animals
+    vocab.insert("dog", "🐶");
+    vocab.insert("cat", "🐱");
+    vocab.insert("mouse", "🐭");
+    vocab.insert("rat", "🐀");
+    vocab.insert("rabbit", "🐰");
+    vocab.insert("fox", "🦊");
+    vocab.insert("wolf", "🐺");
+    vocab.insert("bear", "🐻");
+    vocab.insert("lion", "🦁");
+    vocab.insert("tiger", "🐯");
+    vocab.insert("monkey", "🐒");
+    vocab.insert("horse", "🐴");
+    vocab.insert("cow", "🐮");
+    vocab.insert("pig", "🐷");
+    vocab.insert("sheep", "🐑");
+    vocab.insert("goat", "🐐");
+    vocab.insert("chicken", "🐔");
+    vocab.insert("duck", "🦆");
+    vocab.insert("bird", "🐦");
+    vocab.insert("fish", "🐟");
+    vocab.insert("whale", "🐋");
+    vocab.insert("dolphin", "🐬");
+    vocab.insert("shark", "🦈");
+    vocab.insert("octopus", "🐙");
+    vocab.insert("crab", "🦀");
+    vocab.insert("lobster", "🦞");
+    vocab.insert("snail", "🐌");
+    vocab.insert("bee", "🐝");
+    vocab.insert("ant", "🐜");
+    vocab.insert("spider", "🕷️");
+    vocab.insert("snake", "🐍");
+    vocab.insert("frog", "🐸");
+    vocab.insert("turtle", "🐢");
+    vocab.insert("penguin", "🐧");
+    vocab.insert("kangaroo", "🦘");
+    vocab.insert("panda", "🐼");
+    vocab.insert("elephant", "🐘");
+    vocab.insert("giraffe", "🦒");
+    vocab.insert("zebra", "🦓");
+    vocab.insert("camel", "🐫");
+    vocab.insert("hippo", "🦛");
+    vocab.insert("rhino", "🦏");
+
+    // Plants & food
+    vocab.insert("apple", "🍎");
+    vocab.insert("banana", "🍌");
+    vocab.insert("orange", "🍊");
+    vocab.insert("grape", "🍇");
+    vocab.insert("lemon", "🍋");
+    vocab.insert("lime", "🟩");
+    vocab.insert("cherry", "🍒");
+    vocab.insert("peach", "🍑");
+    vocab.insert("pear", "🍐");
+    vocab.insert("plum", "🍑");
+    vocab.insert("kiwi", "🥝");
+    vocab.insert("melon", "🍈");
+    vocab.insert("watermelon", "🍉");
+    vocab.insert("pineapple", "🍍");
+    vocab.insert("coconut", "🥥");
+    vocab.insert("avocado", "🥑");
+    vocab.insert("carrot", "🥕");
+    vocab.insert("potato", "🥔");
+    vocab.insert("tomato", "🍅");
+    vocab.insert("corn", "🌽");
+    vocab.insert("broccoli", "🥦");
+    vocab.insert("mushroom", "🍄");
+    vocab.insert("onion", "🧅");
+    vocab.insert("garlic", "🧄");
+    vocab.insert("pepper", "🌶️");
+    vocab.insert("eggplant", "🍆");
+    vocab.insert("lettuce", "🥬");
+    vocab.insert("cabbage", "🥬");
+    vocab.insert("spinach", "🥬");
+    vocab.insert("bean", "🫘");
+    vocab.insert("pea", "🟢");
+    vocab.insert("rice", "🍚");
+    vocab.insert("bread", "🍞");
+    vocab.insert("cheese", "🧀");
+    vocab.insert("egg", "🥚");
+    vocab.insert("meat", "🥩");
+    vocab.insert("chicken", "🍗");
+    vocab.insert("fish", "🍣");
+    vocab.insert("shrimp", "🍤");
+    vocab.insert("soup", "🍲");
+    vocab.insert("salad", "🥗");
+    vocab.insert("pizza", "🍕");
+    vocab.insert("burger", "🍔");
+    vocab.insert("sandwich", "🥪");
+    vocab.insert("fries", "🍟");
+    vocab.insert("hotdog", "🌭");
+    vocab.insert("taco", "🌮");
+    vocab.insert("burrito", "🌯");
+    vocab.insert("sushi", "🍣");
+    vocab.insert("noodle", "🍜");
+    vocab.insert("pasta", "🍝");
+    vocab.insert("steak", "🥩");
+    vocab.insert("sausage", "🌭");
+    vocab.insert("bacon", "🥓");
+    vocab.insert("ice cream", "🍨");
+    vocab.insert("cake", "🍰");
+    vocab.insert("cookie", "🍪");
+    vocab.insert("chocolate", "🍫");
+    vocab.insert("candy", "🍬");
+    vocab.insert("honey", "🍯");
+    vocab.insert("jam", "🍓");
+    vocab.insert("nut", "🥜");
+    vocab.insert("seed", "🌰");
+    vocab.insert("flower", "🌸");
+    vocab.insert("tree", "🌳");
+    vocab.insert("bush", "🌿");
+    vocab.insert("grass", "🌾");
+    vocab.insert("leaf", "🍃");
+    vocab.insert("root", "🌱");
+
+    // Relationships & family
+    vocab.insert("mom", "👩");
+    vocab.insert("dad", "👨");
+    vocab.insert("parent", "🧑");
+    vocab.insert("child", "🧒");
+    vocab.insert("kid", "🧒");
+    vocab.insert("son", "👦");
+    vocab.insert("daughter", "👧");
+    vocab.insert("brother", "👦");
+    vocab.insert("sister", "👧");
+    vocab.insert("grandma", "👵");
+    vocab.insert("grandpa", "👴");
+    vocab.insert("aunt", "👩");
+    vocab.insert("uncle", "👨");
+    vocab.insert("cousin", "🧑");
+    vocab.insert("family", "👨‍👩‍👧‍👦");
+    vocab.insert("wife", "👩");
+    vocab.insert("husband", "👨");
+    vocab.insert("partner", "🧑");
+    vocab.insert("friend", "🫂");
+    vocab.insert("enemy", "😡");
+    vocab.insert("lover", "💑");
+    vocab.insert("crush", "😍");
+    vocab.insert("boss", "🧑‍💼");
+    vocab.insert("colleague", "🧑‍💼");
+    vocab.insert("neighbor", "🏘️");
+
+    // Nuanced verbs
+    vocab.insert("whisper", "🤫");
+    vocab.insert("shout", "📢");
+    vocab.insert("scream", "😱");
+    vocab.insert("laugh", "😂");
+    vocab.insert("cry", "😭");
+    vocab.insert("smile", "😊");
+    vocab.insert("frown", "😞");
+    vocab.insert("hug", "🤗");
+    vocab.insert("kiss", "💋");
+    vocab.insert("wave", "👋");
+    vocab.insert("nod", "👍");
+    vocab.insert("shake", "🤝");
+    vocab.insert("jump", "🤸");
+    vocab.insert("climb", "🧗");
+    vocab.insert("fall", "🫨");
+    vocab.insert("fly", "🕊️");
+    vocab.insert("swim", "🏊");
+    vocab.insert("crawl", "🐛");
+    vocab.insert("run", "🏃");
+    vocab.insert("walk", "🚶");
+    vocab.insert("drive", "🚗");
+    vocab.insert("ride", "🏇");
+    vocab.insert("throw", "🏀");
+    vocab.insert("catch", "🤲");
+    vocab.insert("kick", "🥾");
+    vocab.insert("hit", "🥊");
+    vocab.insert("fight", "🥋");
+    vocab.insert("rest", "😴");
+    vocab.insert("sleep", "🛌");
+    vocab.insert("wake", "🌅");
+    vocab.insert("dream", "💭");
+    vocab.insert("think", "🤔");
+    vocab.insert("believe", "🙏");
+    vocab.insert("wish", "⭐");
+    vocab.insert("hope", "🌈");
+    vocab.insert("love", "❤️");
+    vocab.insert("hate", "😡");
+    vocab.insert("fear", "😱");
+    vocab.insert("trust", "🤝");
+    vocab.insert("doubt", "🤨");
+    vocab.insert("learn", "📚");
+    vocab.insert("teach", "👨‍🏫");
+    vocab.insert("help", "🆘");
+    vocab.insert("save", "💾");
+    vocab.insert("lose", "😞");
+    vocab.insert("find", "🔍");
+    vocab.insert("search", "🔎");
+    vocab.insert("build", "🏗️");
+    vocab.insert("destroy", "💥");
+    vocab.insert("fix", "🔧");
+    vocab.insert("break", "💔");
+    vocab.insert("create", "✨");
+    vocab.insert("draw", "🎨");
+    vocab.insert("paint", "🎨");
+    vocab.insert("write", "✍️");
+    vocab.insert("read", "📖");
+    vocab.insert("sing", "🎤");
+    vocab.insert("dance", "💃");
+    vocab.insert("play", "🎮");
+    vocab.insert("watch", "👀");
+    vocab.insert("listen", "👂");
+    vocab.insert("talk", "💬");
+    vocab.insert("speak", "🗣️");
+    vocab.insert("yell", "📢");
+    vocab.insert("argue", "🤬");
+    vocab.insert("agree", "🤝");
+    vocab.insert("disagree", "🙅");
+    vocab.insert("invite", "📩");
+    vocab.insert("visit", "🏡");
+    vocab.insert("leave", "🚪");
+    vocab.insert("arrive", "🛬");
+    vocab.insert("travel", "✈️");
+    vocab.insert("move", "🚚");
+    vocab.insert("stay", "🏠");
+    vocab.insert("return", "🔙");
+    vocab.insert("send", "📤");
+    vocab.insert("receive", "📥");
+    vocab.insert("open", "🔓");
+    vocab.insert("close", "🔒");
+    vocab.insert("start", "🚀");
+    vocab.insert("finish", "🏁");
+    vocab.insert("continue", "➡️");
+    vocab.insert("stop", "⏹️");
+
+    // More adjectives
+    vocab.insert("happy", "😊");
+    vocab.insert("sad", "😢");
+    vocab.insert("angry", "😡");
+    vocab.insert("scared", "😱");
+    vocab.insert("brave", "🦸");
+    vocab.insert("shy", "😳");
+    vocab.insert("funny", "🤣");
+    vocab.insert("boring", "😴");
+    vocab.insert("smart", "🧠");
+    vocab.insert("dumb", "🫠");
+    vocab.insert("strong", "💪");
+    vocab.insert("weak", "🫤");
+    vocab.insert("rich", "💰");
+    vocab.insert("poor", "🪙");
+    vocab.insert("beautiful", "😍");
+    vocab.insert("ugly", "🤢");
+    vocab.insert("young", "🧒");
+    vocab.insert("old", "👴");
+    vocab.insert("new", "🆕");
+    vocab.insert("fast", "⚡");
+    vocab.insert("slow", "🐢");
+    vocab.insert("hot", "🔥");
+    vocab.insert("cold", "❄️");
+    vocab.insert("clean", "🧼");
+    vocab.insert("dirty", "🗑️");
+    vocab.insert("sweet", "🍬");
+    vocab.insert("sour", "🍋");
+    vocab.insert("salty", "🧂");
+    vocab.insert("bitter", "🍫");
+    vocab.insert("spicy", "🌶️");
+    vocab.insert("soft", "☁️");
+    vocab.insert("hard", "💎");
+    vocab.insert("big", "🟦");
+    vocab.insert("small", "🟩");
+    vocab.insert("tall", "📏");
+    vocab.insert("short", "📏");
+    vocab.insert("wide", "⬅️➡️");
+    vocab.insert("narrow", "🔽");
+    vocab.insert("deep", "⬇️");
+    vocab.insert("shallow", "⬆️");
+
+    // Interjections & exclamations
+    vocab.insert("wow", "😮");
+    vocab.insert("yay", "🎉");
+    vocab.insert("oops", "😬");
+    vocab.insert("uh oh", "😨");
+    vocab.insert("hmm", "🤔");
+    vocab.insert("aha", "💡");
+    vocab.insert("ugh", "😩");
+    vocab.insert("phew", "😮‍💨");
+    vocab.insert("ouch", "🤕");
+    vocab.insert("yikes", "😱");
+    vocab.insert("yay", "🎉");
+    vocab.insert("boo", "👻");
+    vocab.insert("yay", "🎉");
+    vocab.insert("hurray", "🎊");
+    vocab.insert("alas", "😔");
+    vocab.insert("whoa", "😲");
+    vocab.insert("eh", "🤷");
+    vocab.insert("meh", "😐");
+    vocab.insert("yup", "👍");
+    vocab.insert("nope", "👎");
+    vocab.insert("ok", "👌");
+    vocab.insert("sure", "👍");
+    vocab.insert("nah", "👎");
     vocab.insert("told", "🗣️");   // speaking face for telling
     vocab.insert("choose", "🫵"); // pointing finger for choosing
     vocab.insert("believe", "🙏"); // hands in prayer for belief
@@ -980,16 +1330,13 @@ pub fn get_vocabulary() -> HashMap<&'static str, &'static str> {
     vocab.insert("baby", "👶");
     vocab.insert("grandpa", "👴➡️👨‍👧‍👦"); // old man arrow to father (father's father)
     vocab.insert("grandma", "👵➡️👩‍👧‍👦"); // old woman arrow to mother (mother's mother)
-    vocab.insert("grandfather", "�➡️👨‍👧‍👦");
-    vocab.insert("grandmother", "�👵➡️👩‍👧‍👦");
-    vocab.insert("uncle", "👨�👨‍👧‍👦"); // man connected to father (father's brother)
-    vocab.insert("aunt", "👩�👩‍👧‍👦"); // woman connected to mother (mother's sister)
-    vocab.insert("cousin", "👫➡️👫"); // people connected to people (children of siblings)
-    vocab.insert("husband", "👨💍👩"); // man ring woman (marriage bond)
-    vocab.insert("wife", "👩💍👨"); // woman ring man (marriage bond)
-    vocab.insert("boyfriend", "👨❤️�"); // man heart woman (romantic but not married)
-    vocab.insert("girlfriend", "👩❤️�"); // woman heart man (romantic but not married)
-    vocab.insert("partner", "�🤝"); // people connected as equals
+    vocab.insert("grandfather", "👴➡️👨‍👧‍👦");
+    vocab.insert("grandmother", "👵➡️👩‍👧‍👦");
+    vocab.insert("uncle", "👨👨‍👧‍👦"); // man connected to father (father's brother)
+    vocab.insert("aunt", "👩👩‍👧‍👦"); // woman connected to mother (mother's sister)
+    vocab.insert("boyfriend", "👨❤️👩"); // man heart woman (romantic but not married)
+    vocab.insert("girlfriend", "👩❤️👨"); // woman heart man (romantic but not married)
+    vocab.insert("partner", "👫"); // people connected as equals
     
     // Body parts (essential for actions)
     vocab.insert("body", "🧍");
