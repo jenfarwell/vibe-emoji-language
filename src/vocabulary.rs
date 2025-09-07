@@ -398,6 +398,175 @@ pub fn get_vocabulary() -> HashMap<&'static str, &'static str> {
     vocab.insert("life", "❤️");
     vocab.insert("death", "⚰️");
     vocab.insert("love", "❤️");
+    // --- MASSIVE LEXICON EXTENSION START ---
+    // Emotions & states
+    vocab.insert("excited", "🤩");
+    vocab.insert("bored", "😐");
+    vocab.insert("anxious", "😰");
+    vocab.insert("calm", "😌");
+    vocab.insert("confused", "😕");
+    vocab.insert("proud", "🙌");
+    vocab.insert("ashamed", "😳");
+    vocab.insert("embarrassed", "😳");
+    vocab.insert("grateful", "🙏");
+    vocab.insert("jealous", "😒");
+    vocab.insert("lonely", "😔");
+    vocab.insert("nostalgic", "🕰️");
+    vocab.insert("surprised", "😮");
+    vocab.insert("relieved", "😅");
+    vocab.insert("curious", "🧐");
+    // Foods & drinks (expanded)
+    vocab.insert("coffee", "☕");
+    vocab.insert("tea", "🍵");
+    vocab.insert("beer", "🍺");
+    vocab.insert("wine", "🍷");
+    vocab.insert("salad", "🥗");
+    vocab.insert("noodles", "🍜");
+    vocab.insert("ramen", "🍜");
+    vocab.insert("steak", "🥩");
+    vocab.insert("egg", "🥚");
+    vocab.insert("cheese", "🧀");
+    vocab.insert("chocolate", "🍫");
+    vocab.insert("cookie", "🍪");
+
+    // Weather & nature
+    vocab.insert("rain", "🌧️");
+    vocab.insert("snow", "❄️");
+    vocab.insert("storm", "⛈️");
+    vocab.insert("fog", "🌫️");
+    vocab.insert("wind", "💨");
+    vocab.insert("leaf", "🍃");
+    vocab.insert("flower", "🌸");
+    vocab.insert("volcano", "🌋");
+    vocab.insert("comet", "☄️");
+    vocab.insert("planet", "🪐");
+
+    // Activities & hobbies
+    vocab.insert("read", "📚");
+    vocab.insert("write", "✍️");
+    vocab.insert("paint", "🖌️");
+    vocab.insert("photograph", "📷");
+    vocab.insert("run", "🏃");
+    vocab.insert("hike", "🥾");
+    vocab.insert("camp", "🏕️");
+    vocab.insert("garden", "🌱🌿");
+    vocab.insert("cook", "🍳");
+
+    // Technology & internet
+    vocab.insert("internet", "🌐");
+    vocab.insert("email", "✉️");
+    vocab.insert("message", "💬");
+    vocab.insert("code", "💻🔧");
+    vocab.insert("server", "🖥️");
+    vocab.insert("database", "🗄️");
+    vocab.insert("bug", "🐞");
+    vocab.insert("fix", "🔧✅");
+
+    // Objects & tools
+    vocab.insert("key", "🔑");
+    vocab.insert("lock", "🔒");
+    vocab.insert("knife", "🔪");
+    vocab.insert("scissors", "✂️");
+    vocab.insert("wallet", "👝");
+    vocab.insert("bag", "👜");
+    vocab.insert("glasses", "👓");
+    vocab.insert("watch", "⌚");
+
+    // Occupations & roles
+    vocab.insert("nurse", "👩‍⚕️");
+    vocab.insert("police", "👮‍♂️");
+    vocab.insert("firefighter", "👩‍🚒");
+    vocab.insert("farmer", "👨‍🌾");
+    vocab.insert("driver", "🧑‍✈️");
+    vocab.insert("scientist", "🧑‍🔬");
+
+    // Travel & transport (additional)
+    vocab.insert("taxi", "🚕");
+    vocab.insert("subway", "🚇");
+    vocab.insert("motorcycle", "🏍️");
+    vocab.insert("helicopter", "🚁");
+
+    // Colors & shapes
+    vocab.insert("green", "🟢");
+    vocab.insert("yellow", "🟡");
+    vocab.insert("purple", "🟣");
+    vocab.insert("black", "⚫");
+    vocab.insert("white", "⚪");
+    vocab.insert("square", "⬛");
+    vocab.insert("circle", "⚪");
+    vocab.insert("triangle", "🔺");
+
+    // Numbers & quantities
+    vocab.insert("one", "1️⃣");
+    vocab.insert("two", "2️⃣");
+    vocab.insert("three", "3️⃣");
+    vocab.insert("many", "🔢");
+    vocab.insert("few", "🔸🔸");
+    vocab.insert("all", "♾️");
+
+    // Time concepts
+    vocab.insert("soon", "🔜");
+    vocab.insert("later", "🔜⏱️");
+    vocab.insert("early", "🌅⏰");
+    vocab.insert("late", "🌙⏰");
+
+    // Communication & social
+    vocab.insert("share", "🔁");
+    vocab.insert("post", "📮");
+    vocab.insert("follow", "➕👣");
+    vocab.insert("friendrequest", "🤝➕");
+    vocab.insert("block", "⛔🔒");
+
+    // Finance & commerce
+    vocab.insert("money", "💵");
+    vocab.insert("bank", "🏦");
+    vocab.insert("buy", "🛒➡️");
+    vocab.insert("sell", "⬅️🛒");
+    vocab.insert("price", "💲");
+
+    // Health & body
+    vocab.insert("heart", "❤️");
+    vocab.insert("brain", "🧠");
+    vocab.insert("lungs", "🫁");
+    vocab.insert("stomach", "🫃");
+    vocab.insert("bone", "🦴");
+    vocab.insert("muscle", "💪");
+    vocab.insert("blood", "🩸");
+
+    // Medical & safety
+    vocab.insert("clinic", "🏥");
+    vocab.insert("ambulance", "🚑");
+    vocab.insert("emergency", "🚨");
+    vocab.insert("safety", "🦺");
+
+    // Symbols & punctuation like tokens
+    vocab.insert("question", "❓");
+    vocab.insert("exclamation", "❗");
+    vocab.insert("percent", "%");
+    vocab.insert("ampersand", "&");
+
+    // Fun & miscellaneous
+    vocab.insert("party", "🥳");
+    vocab.insert("gift", "🎁");
+    vocab.insert("trophy", "🏆");
+    vocab.insert("medal", "🏅");
+    vocab.insert("movie", "🎬");
+    vocab.insert("music", "🎵");
+    vocab.insert("band", "🎸");
+    vocab.insert("theater", "🎭");
+
+    // Programming / developer actions
+    vocab.insert("deploy", "📦🚀");
+    vocab.insert("merge", "🔀");
+    vocab.insert("commit", "📝");
+    vocab.insert("review", "👀✅");
+
+    // Fillers: short synonyms to improve parsing
+    vocab.insert("msg", "💬");
+    vocab.insert("img", "🖼️");
+    vocab.insert("vid", "🎥");
+
+    // --- MASSIVE LEXICON EXTENSION END ---
     vocab.insert("hate", "😠");
     vocab.insert("joy", "😊");
     vocab.insert("pain", "😖");
@@ -1195,9 +1364,7 @@ pub fn get_vocabulary() -> HashMap<&'static str, &'static str> {
     vocab.insert("phew", "😮‍💨");
     vocab.insert("ouch", "🤕");
     vocab.insert("yikes", "😱");
-    vocab.insert("yay", "🎉");
     vocab.insert("boo", "👻");
-    vocab.insert("yay", "🎉");
     vocab.insert("hurray", "🎊");
     vocab.insert("alas", "😔");
     vocab.insert("whoa", "😲");
