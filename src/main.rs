@@ -279,7 +279,7 @@ fn find_word_in_vocab<'a>(word: &str, vocab: &'a HashMap<&str, &str>) -> Option<
 fn compose_unknown(word: &str, vocab: &HashMap<&str, &str>) -> Option<String> {
     // First try to find the word through normalization
     if let Some(emoji) = find_word_in_vocab(word, vocab) {
-        return Some(emoji.to_string());
+        return Some(add_spaces_between_emojis(emoji));
     }
     
     // Try to split the word into two parts where both are in vocab AND should be included
@@ -288,11 +288,15 @@ fn compose_unknown(word: &str, vocab: &HashMap<&str, &str>) -> Option<String> {
         let suffix = &word[i..];
         if should_include_word(prefix, vocab) && should_include_word(suffix, vocab) {
             if let (Some(&p_emoji), Some(&s_emoji)) = (vocab.get(prefix), vocab.get(suffix)) {
-                return Some(format!("{}{}", p_emoji, s_emoji));
+                return Some(format!("{} {}", add_spaces_between_emojis(p_emoji), add_spaces_between_emojis(s_emoji)));
             }
         }
     }
     None // Return None instead of ❓ for unknown words
+}
+
+fn add_spaces_between_emojis(s: &str) -> String {
+    s.chars().map(|c| c.to_string()).collect::<Vec<_>>().join(" ")
 }
 
 fn main() {
@@ -335,12 +339,12 @@ fn main() {
                 
                 if args.full {
                     // For full vocabulary, include all words that have mappings
-                    find_word_in_vocab(&clean_word, &vocab).map(|emoji| emoji.to_string())
+                    find_word_in_vocab(&clean_word, &vocab).map(|emoji| add_spaces_between_emojis(emoji))
                         .or_else(|| compose_unknown(&clean_word, &vocab))
                 } else {
                     // For filtered vocabulary, only include words that should be visualized
                     if should_include_word(&clean_word, &vocab) {
-                        find_word_in_vocab(&clean_word, &vocab).map(|emoji| emoji.to_string())
+                        find_word_in_vocab(&clean_word, &vocab).map(|emoji| add_spaces_between_emojis(emoji))
                     } else {
                         // Try composition for unknown words, but only if result would be meaningful
                         compose_unknown(&clean_word, &vocab)
